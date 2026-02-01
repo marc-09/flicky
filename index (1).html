@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One More Step - Oink Jam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Title Screen -->
+    <div id="titleScreen" class="screen">
+        <h1>ONE MORE STEP</h1>
+        <p class="subtitle">Every move costs something.</p>
+        <button id="playBtn" class="btn">Play</button>
+        <button id="howToPlayBtn" class="btn secondary">How to Play</button>
+    </div>
+
+    <!-- How to Play Screen -->
+    <div id="howToPlayScreen" class="screen hidden">
+        <h2>How to Play</h2>
+        <div class="instructions">
+            <p>🐷 You are a pig trying to reach the goal!</p>
+            <p>🎯 Every move costs 1 energy</p>
+            <p>⚡ Avoid the red hazards or lose 10 energy!</p>
+            <p>🎮 Controls: WASD or Arrow Keys</p>
+            <p>🔄 Press R to restart</p>
+            <p>🔇 Press M to mute/unmute</p>
+        </div>
+        <button id="backBtn" class="btn">Back</button>
+    </div>
+
+    <!-- Game Container -->
+    <div id="gameContainer" class="hidden">
+        <!-- HUD -->
+        <div id="hud">
+            <div class="hud-item">
+                <span class="label">Energy:</span>
+                <span id="energyDisplay">100</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">Steps:</span>
+                <span id="stepsDisplay">0</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">Time:</span>
+                <span id="timerDisplay">0:00</span>
+            </div>
+            <div class="hud-item">
+                <button id="muteBtn" class="small-btn">🔊</button>
+            </div>
+        </div>
+
+        <!-- Canvas -->
+        <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <!-- Win Screen -->
+    <div id="winScreen" class="screen hidden">
+        <h1>🎉 LEVEL COMPLETE! 🎉</h1>
+        <div class="stats">
+            <p>Steps: <span id="finalSteps"></span></p>
+            <p>Time: <span id="finalTime"></span></p>
+            <p>Energy Left: <span id="finalEnergy"></span></p>
+        </div>
+        <button id="playAgainBtn" class="btn">Play Again</button>
+    </div>
+
+    <!-- Lose Screen -->
+    <div id="loseScreen" class="screen hidden">
+        <h1>💔 OUT OF ENERGY 💔</h1>
+        <p class="subtitle">You ran out of energy!</p>
+        <div class="stats">
+            <p>Steps Taken: <span id="loseSteps"></span></p>
+            <p>Time Survived: <span id="loseTime"></span></p>
+        </div>
+        <button id="retryBtn" class="btn">Try Again</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
